@@ -160,4 +160,4 @@ cython_debug/
 #.idea/
 
 # files that I don't have a license for
-Detailansicht.pdf
+Detailansicht*
