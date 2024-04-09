@@ -14,6 +14,8 @@ reader = pypdf.PdfReader('Detailansicht_04103.pdf')
 psy_pages = [p.extract_text() for p in reader.pages]
 # print(psy_pages)
 
+psychs = []
+psych_csv = ''
 for p in psy_pages:
     p_name = p.split('\n')[3]
     p_fachgebiet = p.split('\n')[4][12:]
@@ -39,10 +41,33 @@ for p in psy_pages:
         p_leistungen += line.replace('Psychotherapie: ', '') + ', '
     p_leistungen = p_leistungen[:-2]
     
-    print(f'Name:       {p_name}')
-    print(f'Adresse:    {p_praxis}')
-    print(f'Fachgebiet: {p_fachgebiet}')
-    print(f'Telefon:    {p_telefon}')
-    print(f'Erreichbar: {p_erreichbarkeit}')
-    print(f'Leistungen: {p_leistungen}')
-    print()
+    # print(f'Name:       {p_name}')
+    # print(f'Adresse:    {p_praxis}')
+    # print(f'Fachgebiet: {p_fachgebiet}')
+    # print(f'Telefon:    {p_telefon}')
+    # print(f'Erreichbar: {p_erreichbarkeit}')
+    # print(f'Leistungen: {p_leistungen}')
+    # print()
+    
+    erreich_list = []
+    for tag in p_erreichbarkeit.keys():
+        for zeit in p_erreichbarkeit[tag]:
+            erreich_list.append(tag + '\t' + zeit[0].strftime('%H:%M') + '\t'+ zeit[1].strftime('%H:%M'))
+    # print(erreich_list)
+    
+    psych_csv += f'TRUE\t{p_name}\t\t\t'
+    if len(erreich_list) > 0: psych_csv += erreich_list.pop(0)
+    psych_csv += f'\n\t{p_fachgebiet}\t{p_praxis}\t\t'
+    if len(erreich_list) > 0: psych_csv += erreich_list.pop(0)
+    psych_csv += f'\n\t{p_leistungen}\t{p_telefon}\t\t'
+    if len(erreich_list) > 0: psych_csv += erreich_list.pop(0)
+    psych_csv += '\n'
+    while len(erreich_list) > 0:
+        psych_csv += f'\t\t\t\t{erreich_list.pop(0)}\n'
+    psych_csv += '\n'
+
+
+    # psychs.append([p_name, p_fachgebiet, p_praxis, p_leistungen, p_telefon, p_erreichbarkeit])
+
+with open('beepboop.csv', 'w', encoding='utf-8') as f:
+    f.write(psych_csv)

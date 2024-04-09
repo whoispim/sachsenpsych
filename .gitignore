@@ -161,3 +161,4 @@ cython_debug/
 
 # files that I don't have a license for
 Detailansicht*
+beepboop.csv
