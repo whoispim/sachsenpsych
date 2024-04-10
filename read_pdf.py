@@ -1,21 +1,21 @@
-import sys
+import glob
 import pypdf
 from datetime import time
 
-# if len(sys.argv) <= 1:
-#     print('Please enter file names of Detailansicht.pdf-files.')
-#     exit()
+file_list = glob.glob('Detailansicht*.pdf')
+if len(file_list) < 1:
+    print('Keine Dateien gefunden.')
+    print('Die Dateinamen der PDFs müssen mit "Detailansicht" beginnen.')
+    exit()
+    
+psy_pages = []
+for filename in file_list:
+    print(f'{filename} wird geladen.')
+    reader = pypdf.PdfReader(filename)
+    psy_pages.extend([p.extract_text() for p in reader.pages])
 
-# psy_pages = []
-# for i in range(1, len(sys.argv)):
-#     reader = pypdf.PdfReader(sys.argv[i])
-#     psy_pages.extend([p.extract_text() for p in reader.pages])
-reader = pypdf.PdfReader('Detailansicht_04103.pdf')
-psy_pages = [p.extract_text() for p in reader.pages]
-# print(psy_pages)
-
-psychs = []
 psych_csv = ''
+psych_num = 0
 for p in psy_pages:
     p_name = p.split('\n')[3]
     p_fachgebiet = p.split('\n')[4][12:]
@@ -66,8 +66,9 @@ for p in psy_pages:
         psych_csv += f'\t\t\t\t{erreich_list.pop(0)}\n'
     psych_csv += '\n'
 
-
-    # psychs.append([p_name, p_fachgebiet, p_praxis, p_leistungen, p_telefon, p_erreichbarkeit])
-
+    psych_num += 1
+ 
 with open('beepboop.csv', 'w', encoding='utf-8') as f:
     f.write(psych_csv)
+
+print(f'Erreichbarkeits- und Kontaktdaten zu {psych_num} Praxen wurden passend formatiert in der Datei beepboop.csv ausgegeben.')
