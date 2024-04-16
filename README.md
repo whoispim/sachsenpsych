@@ -1,4 +1,4 @@
-# Sachsenpsych soll der helfen, endlich ein paar Psychotherapeut:innen anzurufen
+# Sachsenpsych soll dir helfen, endlich ein paar Psychotherapeut:innen anzurufen
 
 ![Ein Beispielbild vom funktionierenden Spreadsheet](example.png)
 
@@ -29,7 +29,7 @@ Wartelisten zu setzen.
 
 1. Lade die Datei _read_pdf.py_ aus diesem Repository herunter und lege sie im gleichen Ordner wie die pdf-Dateien ab.
 1. Führe das Python-Skript aus. Es generiert aus den pdf-Dateien eine Detailansicht.csv
-    1. Eventuell musst du vorher noch das modul pypdf installieren
+    1. Eventuell musst du vorher noch das Modul pypdf installieren
     1. Falls du mit dem Ausführen von Python-Skripten noch keine Erfahrung hast musst du dir an dieser Stelle leider etwas Hilfe suchen..
 
 ### csv in Spreadsheet importieren
