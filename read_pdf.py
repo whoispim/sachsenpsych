@@ -68,7 +68,7 @@ for p in psy_pages:
 
     psych_num += 1
  
-with open('beepboop.csv', 'w', encoding='utf-8') as f:
+with open('Detailansicht.csv', 'w', encoding='utf-8') as f:
     f.write(psych_csv)
 
 print(f'Erreichbarkeits- und Kontaktdaten zu {psych_num} Praxen wurden passend formatiert in der Datei beepboop.csv ausgegeben.')
