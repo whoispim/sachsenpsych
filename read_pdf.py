@@ -69,10 +69,10 @@ def pdf_to_csv(folder = ''):
 
         psych_num += 1
     
-    with open('Detailansicht.csv', 'w', encoding='utf-8') as f:
+    with open(folder + 'Detailansicht.csv', 'w', encoding='utf-8') as f:
         f.write(psych_csv)
 
-    print(f'Erreichbarkeits- und Kontaktdaten zu {psych_num} Praxen wurden passend formatiert in der Datei beepboop.csv ausgegeben.')
+    print(f'Erreichbarkeits- und Kontaktdaten zu {psych_num} Praxen wurden passend formatiert in der Datei Detailansicht.csv ausgegeben.')
 
 if __name__ == '__main__':
     pdf_to_csv()
