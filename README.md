@@ -1,4 +1,6 @@
-# Sachsenpsych soll der helfen, endlich ein paar Psychotherapeut:innen anzurufen
+# Sachsenpsych soll dir helfen, endlich ein paar Psychotherapeut:innen anzurufen
+
+![Ein Beispielbild vom funktionierenden Spreadsheet](example.png)
 
 ## Idee
 
@@ -27,7 +29,7 @@ Wartelisten zu setzen.
 
 1. Lade die Datei _read_pdf.py_ aus diesem Repository herunter und lege sie im gleichen Ordner wie die pdf-Dateien ab.
 1. Führe das Python-Skript aus. Es generiert aus den pdf-Dateien eine Detailansicht.csv
-    1. Eventuell musst du vorher noch das modul pypdf installieren
+    1. Eventuell musst du vorher noch das Modul pypdf installieren
     1. Falls du mit dem Ausführen von Python-Skripten noch keine Erfahrung hast musst du dir an dieser Stelle leider etwas Hilfe suchen..
 
 ### csv in Spreadsheet importieren
@@ -42,3 +44,21 @@ Wartelisten zu setzen.
     1. Google wird dich ein paar mal Fragen, ob du wirklich fremde Skripts ausführen willst. Solltest du das nicht wollen kannst du
         1. Händisch in alle Felder der Spalte A eine Checkbox einfügen. Markiere sie dazu mit Strg und klicke unter _Einfügen_ auf _Kästchen_.
         1. Oder einfach nichts tun. Falls du eine Praxis deaktivieren möchtest z.B. weil du sie schon erreicht hast tausche das `TRUE` einfach durch ein `FALSE` aus.
+
+## Was es tut
+
+- In den Spalten B und C befinden sich die Infos über die Praxis
+    - Name
+    - Adresse
+    - Telefonnummer
+    - Fachgebiet
+    - Angebotene Leistungen
+- In den Spalten E – G sind die Tage und die Telefonzeiten an 
+- ⭐️⭐️⭐️ __In Spalte I siehst du, wo du heute, morgen oder sogar grade jetzt anrufen kannst__ ⭐️⭐️⭐️
+- In den Felder G1 und G2 siehst du außerdem noch, wann heute die nächste Telefonzeit beginnt und wann __morgen__ dein erster Anruf ist
+- Solltest du eine Praxis erreicht haben kannst du dir in Spalte J eine Notiz machen und in Spalte die Checkbox deaktivieren (oder `FALSE` reinschreiben) um die Anrufzeiten zu deaktivieren
+
+## 🐥
+
+Ich hoffe, dir bei der Suche nach Psychotherpaie zumindest ein kleines bisschen geholfen zu haben.  
+Der Weg ist schwer aber du musst ihn nicht alleine gehen <3
