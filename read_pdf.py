@@ -18,10 +18,13 @@ def pdf_to_csv(folder = ''):
     psych_csv = ''
     psych_num = 0
     for p in psy_pages:
+        if 'Telefonische Erreichbarkeit' not in p:
+            continue
         p_name = p.split('\n')[3]
-        p_fachgebiet = p.split('\n')[4][12:]
-        p_praxis = p.split('\n')[5][8:] + ', ' + p.split('\n')[6]
-        p_telefon = p.split('\n')[7][9:]
+        p_fachgebiet = p.split('\nFachgebiet: ')[1].split('\n')[0]
+        p_praxis = p.split('\nPraxis: ')[1]
+        p_praxis = ', '.join(p_praxis.split('\n')[:2])
+        p_telefon = p.split('\nTelefon: ')[1].split('\n')[0]
         p_erreichbarkeit = {}
         for line in p.split('Telefonische Erreichbarkeit\n')[1][5:].split('\n'):
             if line.split()[0] not in ['Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag', 'Samstag', 'Sonntag']:
