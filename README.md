@@ -27,10 +27,15 @@ Wartelisten zu setzen.
 
 ### pdf in csv umwandeln
 
+Da das Ausführen von Python-Code auf dem eigenen Rechner nicht so wirklich barrierearm ist, habe ich [hier](https://pim.uber.space/sachsenpsych) eine kleine ⭐️Webanwendung⭐️ dafür gebaut :)
+1. Öffne den [Link zur Webseite](https://pim.uber.space/sachsenpsych)
+1. Klicke auf _Dateien auswählen_, wähle alle im letzten Abschnitt erstellten Detailansicht(...).pdf-Dateien aus und klicke auf _Öffnen_ und dann auf _Hochladen_
+1. Die fertige _Detailansicht.csv_ sollte als Download aufploppen
+
+Alternativ:
 1. Lade die Datei _read_pdf.py_ aus diesem Repository herunter und lege sie im gleichen Ordner wie die pdf-Dateien ab.
 1. Führe das Python-Skript aus. Es generiert aus den pdf-Dateien eine Detailansicht.csv
     1. Eventuell musst du vorher noch das Modul pypdf installieren
-    1. Falls du mit dem Ausführen von Python-Skripten noch keine Erfahrung hast musst du dir an dieser Stelle leider etwas Hilfe suchen..
 
 ### csv in Spreadsheet importieren
 
