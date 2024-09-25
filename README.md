@@ -45,7 +45,7 @@ Alternativ:
 1. Klicke auf _Datei_ &rarr; _Importieren_ und lade unter _Hochladen_ die Datei Detailansicht.csv hoch
 1. Wähle im linken Dropdown die Option _Daten an der ausgewählten Zelle ersetzen_ und klicke auf _Daten importieren_
 1. Optional:
-    1. Da man bei Google Sheets keine Checkboxen importieren kann, habe ich dafür ein Skript hinterlegt. Du findest es oben unter _Custom Menu_ &rarr; _Add Checkboxes_
+    1. Da man bei Google Sheets keine Checkboxen importieren kann, habe ich dafür ein Skript hinterlegt. Du findest es oben unter _Custom Menu_ &rarr; _Add Checkboxes_ (bei kleinen Fenstern eventuell hinter drei Punkten versteckt)
     1. Google wird dich ein paar mal Fragen, ob du wirklich fremde Skripts ausführen willst. Solltest du das nicht wollen kannst du
         1. Händisch in alle Felder der Spalte A eine Checkbox einfügen. Markiere sie dazu mit Strg und klicke unter _Einfügen_ auf _Kästchen_.
         1. Oder einfach nichts tun. Falls du eine Praxis deaktivieren möchtest z.B. weil du sie schon erreicht hast tausche das `TRUE` einfach durch ein `FALSE` aus.
